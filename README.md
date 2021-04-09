@@ -4,9 +4,11 @@
 
 ## Introduction
 
-Unit testing is a methodology in which automated tests execute small units of code and assert wether the results match the developer's expectations.
+**Unit testing** is an automated testing methodology in which a test-runner executes small units of code and asserts wether the results match the developer's expectations.
 
 At Ironhack, we'll use these unit tests to give you instant feedback on your progress on most labs. They also enable us to assess your completion of labs. Not every iteration and not every lab is testable.
+
+The educational team will rely on the results of these automated tests to access your progress and your work.
 
 Read and follow these instructions carefully, there are a lot of new concepts in this Lab and missing one step might stop you from completing the steps that follow.
 
@@ -14,7 +16,7 @@ Read and follow these instructions carefully, there are a lot of new concepts in
 
 As developers, we have at our disposal a large set of automated test-runners, frameworks and libraries. Our choice should always be informed by the automated testing type we're performing (those could be "unit", "integration" or "end-to-end" testing).
 
-The most widely-used JavaScript test-runners are `jest`, `mocha` and `jasmine`. The industry standard nowadays is `jest`. As `jest` can be used with plain JavaScript, Node.js and React projects, a select number of labs from Module 1 through Module 3 will use it to perform unit tests.
+The most widely-used JavaScript test-runners are `jest`, `mocha` and `jasmine`. The industry standard nowadays is **`jest`**. As `jest` can be used with plain JavaScript, Node.js and React projects, a select number of labs from Module 1 through Module 3 will use it to perform unit tests.
 
 Jest is fairly simple to setup and to work with, but it will always be pre-configured for you in the labs in which it's used. As such, you won't have to tweak or dive deep into the topic as of yet.
 
@@ -42,21 +44,25 @@ As stated, our `package.json` file holds a list of the dependencies for this pro
 
 Before working on any of the functionalities that we intend to unit test, let's run the `npm run test` command on our terminal.
 
-[Image of terminal with failing test results]
+![Image of terminal with failing test results](https://user-images.githubusercontent.com/7128083/114206907-ba306080-9953-11eb-8660-16161418590e.png)
 
 You should notice two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named `test-report.html` should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
 
 (If you get a message that reads "jest: command not found", you might have skipped the previous step where we installed dependencies using `npm install`.)
 
-Since we don't want to have to run these tests every time we make an addition or change to our solution, we can start them in a "watch" mode. That means that `jest` will be looking for changes in our code, and will re-run our automated tests with every change. Every time you save a file, the test-runner will be triggered (having auto-save enabled on VSCode is discouraged when running `jest` in "watch mode", it might have a significant impact on performance).
+![Image of browser with failing test results][https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png]
 
-We have added a "test-runner in watch mode" command to the `scripts` property in the `package.json` file. This means that you can achieve it by running `npm run test:watch` in your terminal. This will start up the test-runner in watch-mode in your terminal. To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `test-report.html` file. This will trigger a reload every time the test-runner is executed and you'll be able to see the test results being updated live on the browser.
+Since we don't want to have to run these tests every time we make an addition or change to our solution, we can start them in a "watch" mode. That means that `jest` will be looking for changes in our code, and will re-run our automated tests with every change.
+
+To run the test-runner in "watch mode", run the `npm run test:watch` in your terminal. From now on, every time you save a file, your unit tests will be executed.
+
+To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `test-report.html` file.
 
 ## Iteration 4 - Passing our first tests
 
-To pass the first tests, open the calculator.js file and complete the sum function.
+To pass the first tests, open the calculator.js file and complete the `sum` function.
 
-If you simply return a sum of both arguments from the sum function, you should see at least the first two tests of the "Sum" suite passing. However, a few other tests in the test suite are failing.
+If you simply return a sum of both arguments from the `sum` function, you should see at least the first two tests of the "Sum" suite passing. However, a few other tests in the test suite are failing.
 
 For this particular `sum` function, we don't expect it to simply sum any two values that it is passed. We want a few edge cases to be considered an properly handled.
 
@@ -77,13 +83,15 @@ To throw an error in JavaScript, you should write:
 throw new Error("An explanatory error message");
 ```
 
-Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by 0. If this edge case is not considered, the last test of the test suite will fail.
+Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by `0`. If this edge case is not considered, the last test of the test suite will fail.
 
 ## Iteration 5 - Creating our own tests
 
 Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called "Test-Driven Development". This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
 
 Now, we'll work in reverse.
+
+You can inspect and compare the other `*.spec.js` files to understand how _suites_, _tests_ and _assertions_ are made with Jest.
 
 You're given a `multiply` function inside of the `calculate.js` file. It is already complete, and requires no work from you side.
 
@@ -109,11 +117,11 @@ Then, inside of this test suite, we'll be writing each of the following tests th
 
 - Function is called with two positive integers. The value returned should be the result of the multiplication of both values.
 - Function is called with a negative and a positive integer. The value returned should be a negative number.
-- Function is called with any number and a number `0`. The value returned should be 0 (any number multiplied by `0` equals `0`).
+- Function is called with any number and a number `0`. The value returned should be `0` (any number multiplied by `0` equals `0`).
 
 It's up to you to decide what values the `multiply` function should be called with, and what values are expected as a result.
 
-You can inspect the other `*.spec.js` files to take inspiration. Follow the same naming pattern for tests that you find in the other test files. You can also consult [the `jest` documentation](https://jestjs.io/docs/expect), although you shouldn't need to.
+Follow the same naming pattern for tests that you find in the other test files. You can also consult [the `jest` documentation](https://jestjs.io/docs/expect), although you shouldn't need to.
 
 ## Iteration 6 - Committing solution and checking results
 
@@ -123,7 +131,7 @@ Let's commit our work, and push it to GitHub.
 
 Immediately after doing so, you should see something like this on your fork of the repository on GitHub:
 
-[Image of ongoing tests]
+![Image of ongoing tests](https://user-images.githubusercontent.com/7128083/114205759-8f91d800-9952-11eb-86dc-36b64512d743.png)
 
 This means that GitHub is executing the unit tests for your project on their own machines.
 
@@ -142,10 +150,6 @@ If you want to dive in depth into your test results, or verify why your tests ar
 ![Image of actions tab](https://user-images.githubusercontent.com/7128083/114199203-ff509480-994b-11eb-9b40-1b65b0a2a45a.png)
 
 What we have implemented into this project is a so-called "Continuous Integration/Continuous Delivery" (CI/CD) system.
-
-The educational team will rely on the results of these automated tests to access your progress and your work.
-
-If your unit tests are failing, GitHub might send you an email or a notification. You should be able to disable these in your account settings, if you chose to do so.
 
 Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.
 
