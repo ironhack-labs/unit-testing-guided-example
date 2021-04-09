@@ -1,8 +1,10 @@
 # Lab - Unit Testing
 
+![Ironhack Logo](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+
 ## Introduction
 
-Unit testing is a methodology in which automated tests execute small units of code and assert wether the results match what the developer's expectations.
+Unit testing is a methodology in which automated tests execute small units of code and assert wether the results match the developer's expectations.
 
 At Ironhack, we'll use these unit tests to give you instant feedback on your progress on most labs. They also enable us to assess your completion of labs. Not every iteration and not every lab is testable.
 
@@ -65,7 +67,7 @@ The `subtract` function follows the same logic. Complete it, and ensure you're c
 
 ## Iteration 6 - Dividing
 
-In math, [we cannot divide a number by 0](https://en.wikipedia.org/wiki/Division_by_zero). However, if you perform a division operation in JavaScript, the value returned is `Infinity`.
+In maths, [we cannot divide a number by 0](https://en.wikipedia.org/wiki/Division_by_zero). However, if you perform a division operation in JavaScript, the value returned is `Infinity`.
 
 JavaScript takes a relaxed approach on this topic, but we don't want to allow our `divide` function to make this mistake. As such, if the user calls the function `divide` and passes a `0` as the second argument, you should "throw" an error with the message "Cannot divide by 0".
 
@@ -129,17 +131,21 @@ After a couple of minutes at most the tests results should be ready.
 
 If all of your tests are passing, you should see a green checkmark next to your commit message.
 
-[Image of passing tests]
+![Image of passing tests](https://user-images.githubusercontent.com/7128083/114199197-feb7fe00-994b-11eb-8b41-0dc5a916a3fb.png)
 
 If any of the tests are failing, you'll see a red cross instead.
 
+![Image of failing tests](https://user-images.githubusercontent.com/7128083/114199210-0081c180-994c-11eb-93ff-b1833ad27121.png)
+
 If you want to dive in depth into your test results, or verify why your tests are failing on GitHub, you can press this status symbol or navigate to the "Actions" tab in your repository.
 
-[Image of actions tab]
+![Image of actions tab](https://user-images.githubusercontent.com/7128083/114199203-ff509480-994b-11eb-9b40-1b65b0a2a45a.png)
 
 What we have implemented into this project is a so-called "Continuous Integration/Continuous Delivery" (CI/CD) system.
 
 The educational team will rely on the results of these automated tests to access your progress and your work.
+
+If your unit tests are failing, GitHub might send you an email or a notification. You should be able to disable these in your account settings, if you chose to do so.
 
 Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.
 
