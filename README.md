@@ -52,7 +52,7 @@ There should be two distinct forms of output. First, your terminal should displa
 
 (If you get a message that reads "jest: command not found", you might have skipped the previous step where we installed dependencies using `npm install`.)
 
-![Image of browser with failing test results][https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png]
+![Image of browser with failing test results](https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png)
 
 Since we don't want to have to run these tests every time we make an addition or change to our solution, we can start them in a "watch" mode. That means that `jest` will be looking for changes in our code, and will re-run our automated tests with every change.
 
