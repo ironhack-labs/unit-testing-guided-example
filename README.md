@@ -1,14 +1,14 @@
-# Lab - Unit Testing
-
 ![Ironhack Logo](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+
+# Unit Testing - Guided example
 
 ## Introduction
 
 **Unit testing** is an automated testing methodology in which a test-runner executes small units of code and asserts wether the results match the developer's expectations.
 
-At Ironhack, we'll use these unit tests to give you instant feedback on your progress on most labs. They also enable us to assess your completion of labs. Not every iteration and not every lab is testable.
+At Ironhack, we'll use these unit tests to give you instant feedback on your progress on most labs. They also enable us to assess your completion of labs. However, keep in mind that not every iteration and not every lab is testable.
 
-The educational team will rely on the results of these automated tests to access your progress and your work.
+The Education team will rely on the results of these automated tests to access your progress and your work. We decided to take the same approach as it has been taken in the real-world development departments - the code needs to pass the tests in order to be accepted. This will train you to think in the direction of test-driven development and help you troubleshoot and solve problems.
 
 Read and follow these instructions carefully, there are a lot of new concepts in this Lab and missing one step might stop you from completing the steps that follow.
 
@@ -16,7 +16,7 @@ Read and follow these instructions carefully, there are a lot of new concepts in
 
 As developers, we have at our disposal a large set of automated test-runners, frameworks and libraries. Our choice should always be informed by the automated testing type we're performing (those could be "unit", "integration" or "end-to-end" testing).
 
-The most widely-used JavaScript test-runners are `jest`, `mocha` and `jasmine`. The industry standard nowadays is **`jest`**. As `jest` can be used with plain JavaScript, Node.js and React projects, a select number of labs from Module 1 through Module 3 will use it to perform unit tests.
+The most widely-used JavaScript test-runners are `jest`, `mocha` and `jasmine`. The industry standard nowadays is **`jest`**. As `jest` can be used with plain JavaScript, as well as Node.js and React projects (which you will cover in later modules), a select number of labs from Module 1 through Module 3 will use it to perform unit tests.
 
 Jest is fairly simple to setup and to work with, but it will always be pre-configured for you in the labs in which it's used. As such, you won't have to tweak or dive deep into the topic as of yet.
 
@@ -30,25 +30,49 @@ First, `package.json`. This files contains the dependencies necessary to make th
 
 Second, you will find a tests directory. This directory contains multiple files with the `.spec.js` extensions. It is common to name unit test files ending with a `.spec.js` or `.tests.js` extension.
 
-Files such as `package-lock.json`, and directories such as `.github` are not relevant right now.
+Files such as `package-lock.json`, and directories such as `.github` are not relevant right now. By the end of this bootcamp, you will know much more about all these terms that probably don't make too much sense now. Patience :pray:
 
 ## Iteration 2 - Setting up the project
 
 Open your terminal.
 
-To run unit test in your machine, you must have both `Node.js` and `npm` installed. To insure you have both, you can run the following commands: `node -v` and `npm -v`. As a result, you should see the versions of either installed on your machine.
+To run unit test in your machine, you must have both `Node.js` and `npm` installed. To insure you have both, you can run the following commands:
 
-As stated, our `package.json` file holds a list of the dependencies for this project. However, these dependencies are not automatically fetched when you clone the repository into your machine. To fetch the dependencies, run the command `npm install` (or the equivalent shorter command `npm i`) to install the project's dependencies.
+```shell
+$ node -v
+# or
+
+$ npm -v
+```
+
+As a result, you should see the versions of either installed on your machine.
+
+As stated, our `package.json` file holds a list of the dependencies for this project. However, these dependencies are not automatically fetched when you clone the repository into your machine. To fetch the dependencies, run the command `npm install` (or the equivalent shorter command `npm i`) to install the project's dependencies. Follow the instructions below:
+
+```shell
+# after you cloned this guided example, navigate inside the repo
+$ cd unit-testing-guided-example
+
+# and install project dependencies
+$ npm i
+```
+
+After this point, you will see that a new file has been created (`package-lock.json`) but no changes will be made from your side inside there so no need to dig deeper into it for now.
 
 ## Iteration 3 - Running unit tests, seeing failures
 
 Before working on any of the functionalities that we intend to unit test, let's run the `npm run test` command on our terminal.
 
+```shell
+# in the root of this project
+$ npm run test
+```
+
 ![Image of terminal with failing test results](https://user-images.githubusercontent.com/7128083/114206907-ba306080-9953-11eb-8660-16161418590e.png)
 
-You should notice two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named `test-report.html` should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
+You should notice two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named **`test-report.html`** should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
 
-(If you get a message that reads "jest: command not found", you might have skipped the previous step where we installed dependencies using `npm install`.)
+:bangbang: If you get a message that reads "jest: command not found", you might have skipped the previous step where we installed dependencies using `npm install`.
 
 ![Image of browser with failing test results][https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png]
 
@@ -60,7 +84,7 @@ To see the results of the unit tests being updated automatically in the browser 
 
 ## Iteration 4 - Passing our first tests
 
-To pass the first tests, open the calculator.js file and complete the `sum` function.
+To pass the first tests, open the `calculator.js` file and complete the `sum` function.
 
 If you simply return a sum of both arguments from the `sum` function, you should see at least the first two tests of the "Sum" suite passing. However, a few other tests in the test suite are failing.
 
@@ -71,7 +95,7 @@ For this particular `sum` function, we don't expect it to simply sum any two val
 
 The `subtract` function follows the same logic. Complete it, and ensure you're checking the results of the unit tests to ensure that all of the requirements are met.
 
-## Iteration 6 - Dividing
+## Iteration 5 - Dividing
 
 In maths, [we cannot divide a number by 0](https://en.wikipedia.org/wiki/Division_by_zero). However, if you perform a division operation in JavaScript, the value returned is `Infinity`.
 
@@ -85,7 +109,7 @@ throw new Error("An explanatory error message");
 
 Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by `0`. If this edge case is not considered, the last test of the test suite will fail.
 
-## Iteration 5 - Creating our own tests
+## Iteration 6 - Creating our own tests
 
 Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called "Test-Driven Development". This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
 
@@ -123,7 +147,7 @@ It's up to you to decide what values the `multiply` function should be called wi
 
 Follow the same naming pattern for tests that you find in the other test files. You can also consult [the `jest` documentation](https://jestjs.io/docs/expect), although you shouldn't need to.
 
-## Iteration 6 - Committing solution and checking results
+## Iteration 7 - Committing solution and checking results
 
 You have solved all of the prior iterations. All of the tests are passing locally.
 
@@ -151,6 +175,6 @@ If you want to dive in depth into your test results, or verify why your tests ar
 
 What we have implemented into this project is a so-called "Continuous Integration/Continuous Delivery" (CI/CD) system.
 
-Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.
+**Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.**
 
 Best of luck 💙
