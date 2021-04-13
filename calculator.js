@@ -14,6 +14,5 @@ function multiply(a, b) {
   return a * b;
 }
 
-// Ignore the following lines
-
+// The following is required to make unit tests work. Please ignore it.
 module.exports = { sum, subtract, divide, multiply };

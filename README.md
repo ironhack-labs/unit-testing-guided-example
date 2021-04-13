@@ -30,7 +30,7 @@ First, `package.json`. This files contains the external dependencies necessary t
 
 Second, you will find a tests directory. This directory contains multiple files with the `.spec.js` extensions. It is common to name unit test files ending with a `.spec.js` or `.tests.js` extension.
 
-Third, our main working file, `calculator.js`. It contains four distinct functions, one for each of the basic arithmetic operations. The functions `sum`, `subtract` and `divide` are incomplete. Later in the lab, you'll be asked to work on each to meet specific requirements. The fourth function, `multiply`, is implemented. You'll be asked to create unit tests to ensure that it runs as expected.
+Third, our main working file, `calculator.js`. It contains four distinct functions, one for each of the basic arithmetic operations. The functions `sum`, `subtract` and `divide` are incomplete. Later in the lab, you'll be asked to work on each to meet specific requirements. The fourth function, `multiply`, is implemented. You'll be asked to create unit tests to ensure that it runs as expected. At the bottom of this file you'll find an unfamiliar syntax (reading `module.exports = /* ... */`). It is required to make our unit tests work, and you'll be learning more about it later on.
 
 Files such as `package-lock.json`, and directories such as `.github` are not relevant right now.
 
@@ -50,13 +50,11 @@ Before working on any of the functionalities that we intend to unit test, let's 
 
 There should be two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named `test-report.html` should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
 
-(If you get a message that reads "jest: command not found", you might have skipped the previous step where we installed dependencies using `npm install`.)
+(If you get a message that reads _"jest: command not found"_, you might have skipped the previous step where we installed dependencies using `npm install`.)
 
 ![Image of browser with failing test results](https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png)
 
-Since we don't want to have to run these tests every time we make an addition or change to our solution, we can start them in a "watch" mode. That means that `jest` will be looking for changes in our code, and will re-run our automated tests with every change.
-
-To run the test-runner in "watch mode", run the `npm run test:watch` command in your terminal. From now on, every time you save a file, your unit tests will be executed.
+Since we don't want to have to run these tests every time we make changes to our solution, we can start the test-runner in _"watch mode"_. That means that `jest` will be looking for changes in our code, and will re-run the automated tests every time you save a file. To run the test-runner in "watch mode", run the `npm run test:watch` command in your terminal.
 
 To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `test-report.html` file.
 
@@ -91,7 +89,7 @@ Our `divide` unit tests will experiment with dividing plain integers, floating p
 
 ## Iteration 7 - Creating our own tests
 
-Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called "Test-Driven Development". This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
+Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called **"Test-Driven Development"**. This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
 
 Now, we'll work in reverse.
 
