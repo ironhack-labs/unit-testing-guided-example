@@ -20,9 +20,17 @@ Jest is fairly simple to setup and to work with, but it will always be pre-confi
 
 You'll be able to run these tests locally on your machine to ensure that your work matches the specification, but they'll also run once you push your solution to GitHub.
 
-## Iteration 1 - Exploring the project
+## Iteration 1 - Initial Setup
 
-Fork this repository. Clone the fork to your machine.
+Fork this repository. You should see an "**Actions**" tab at the top of the GitHub interface for your fork. Click it. You should see the following:
+
+![Actions Tab](https://user-images.githubusercontent.com/7128083/116259226-89329700-a76d-11eb-8d1e-e50b613ddc18.png)
+
+Since our automated tests will be running not only locally but also on GitHub, we need to enable workflows for this repository. Click on "I understand my workflows, go ahead and enable them". You'll have to do this for every lab that has automated tests.
+
+Clone the fork to your machine.
+
+## Iteration 2 - Exploring the project
 
 At the root of this project you'll find multiple files that are worthy of notice.
 
@@ -34,7 +42,7 @@ Third, our main working file, `calculator.js`. It contains four distinct functio
 
 Files such as `package-lock.json`, and directories such as `.github` are not relevant right now.
 
-## Iteration 2 - Setting up the project
+## Iteration 3 - Setting up the project
 
 Open your terminal.
 
@@ -42,7 +50,7 @@ To run our unit tests on your machine, you must have both `Node.js` and `npm` in
 
 As stated, our project depends on external packages. In Module 2, you'll start working closely with these. For now, to fetch these dependencies, all you need to do is to run the command `npm install`. Doing so will add a `node_modules` directory to the root of the project.
 
-## Iteration 3 - Running unit tests, seeing failures
+## Iteration 4 - Running unit tests, seeing failures
 
 Before working on any of the functionalities that we intend to unit test, let's run the `npm run test` command on our terminal.
 
@@ -58,7 +66,7 @@ Since we don't want to have to run these tests every time we make changes to our
 
 To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `test-report.html` file.
 
-## Iteration 4 - Passing our first tests
+## Iteration 5 - Passing our first tests
 
 To pass the first tests, open the `calculator.js` file and complete the `sum` function.
 
@@ -69,11 +77,11 @@ For this particular `sum` function, we don't expect it to simply sum any two val
 - If the function is called with a single number, and no second argument is passed, the function should act as if the second argument passed equals `0`.
 - If the function is called without any arguments, the function should act as if both arguments passed equal `0`.
 
-## Iteration 5 - Subtracting
+## Iteration 6 - Subtracting
 
 The `subtract` function follows the same logic. Complete it, and check the results of the unit tests to ensure that all of the requirements are met.
 
-## Iteration 6 - Dividing
+## Iteration 7 - Dividing
 
 In maths, [we cannot divide a number by 0](https://en.wikipedia.org/wiki/Division_by_zero). However, if you perform a division operation in JavaScript, the value returned is `Infinity`.
 
@@ -87,7 +95,7 @@ throw new Error("An explanatory error message");
 
 Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by `0`. If this edge case is not considered, the last test of the test suite will fail.
 
-## Iteration 7 - Creating our own tests
+## Iteration 8 - Creating our own tests
 
 Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called **"Test-Driven Development"**. This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
 
@@ -125,7 +133,7 @@ It's up to you to decide what values the `multiply` function should be called wi
 
 Follow the same naming pattern for tests that you find in the other test files. You can also consult [the `jest` documentation](https://jestjs.io/docs/expect), although you shouldn't need to.
 
-## Iteration 8 - Committing solution and checking results
+## Iteration 9 - Committing solution and checking results
 
 You have solved all of the prior iterations. All of the tests are passing locally.
 
