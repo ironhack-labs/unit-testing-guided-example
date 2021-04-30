@@ -56,7 +56,7 @@ Before working on any of the functionalities that we intend to unit test, let's 
 
 ![Image of terminal with failing test results](https://user-images.githubusercontent.com/7128083/114206907-ba306080-9953-11eb-8660-16161418590e.png)
 
-There should be two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named `test-report.html` should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
+There should be two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named `lab-solution.html` should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
 
 (If you get a message that reads _"jest: command not found"_, you might have skipped the previous step where we installed dependencies using `npm install`.)
 
@@ -64,7 +64,7 @@ There should be two distinct forms of output. First, your terminal should displa
 
 Since we don't want to have to run these tests every time we make changes to our solution, we can start the test-runner in _"watch mode"_. That means that `jest` will be looking for changes in our code, and will re-run the automated tests every time you save a file. To run the test-runner in "watch mode", run the `npm run test:watch` command in your terminal.
 
-To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `test-report.html` file.
+To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `lab-solution.html` file.
 
 ## Iteration 5 - Passing our first tests
 
@@ -90,7 +90,7 @@ JavaScript takes a relaxed approach on this topic, but we don't want to allow ou
 To throw an error in JavaScript, you should write:
 
 ```js
-throw new Error("An explanatory error message");
+throw new Error('An explanatory error message');
 ```
 
 Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by `0`. If this edge case is not considered, the last test of the test suite will fail.
@@ -112,13 +112,13 @@ Create a file named `multiply.spec.js`. In this file you'll create unit tests fo
 At the top of `multiply.spec.js`, you should import the `multiply` function that is exported by `calculator.js`. You can simply copy and paste the following line.
 
 ```js
-const { multiply } = require("./../calculator.js");
+const { multiply } = require('./../calculator.js');
 ```
 
 Create a test suite for the "Multiply" functionality.
 
 ```js
-describe("Multiply", () => {
+describe('Multiply', () => {
   // Our tests will be added here.
 });
 ```
@@ -159,7 +159,7 @@ If you want to dive in depth into your test results, or verify why your tests ar
 
 ![Image of actions tab](https://user-images.githubusercontent.com/7128083/114199203-ff509480-994b-11eb-9b40-1b65b0a2a45a.png)
 
-What we have implemented into this project is a so-called "Continuous Integration/Continuous Delivery" (CI/CD) system.
+What we have implemented into this project is a so-called "_Continuous Integration/Continuous Delivery_" (CI/CD) system.
 
 Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.
 

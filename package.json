@@ -1,7 +1,8 @@
 {
   "name": "lab-unit-testing",
-  "description": "Unit testing .",
+  "description": "Introduces automated testing",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll"
@@ -19,7 +20,8 @@
       [
         "./node_modules/jest-html-reporter",
         {
-          "pageTitle": "Test Report"
+          "pageTitle": "Lab Solution",
+          "outputPath": "lab-solution.html"
         }
       ]
     ]
@@ -30,7 +32,7 @@
     "titleTemplate": "{title}"
   },
   "prettier": {
-    "printWidth": 120,
-    "trailingComma": "none"
+    "trailingComma": "none",
+    "singleQuote": true
   }
 }
