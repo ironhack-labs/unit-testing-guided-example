@@ -24,7 +24,7 @@ You'll be able to run these tests locally on your machine to ensure that your wo
 
 Fork this repository. You should see an "**Actions**" tab at the top of the GitHub interface for your fork. Click it. You should see the following:
 
-![Actions Tab](https://user-images.githubusercontent.com/7128083/116259226-89329700-a76d-11eb-8d1e-e50b613ddc18.png)
+![Actions Tab](https://user-images.githubusercontent.com/7128083/116699595-a9589500-a9bd-11eb-95be-fca6914504e0.png)
 
 Since our automated tests will be running not only locally but also on GitHub, we need to enable workflows for this repository. Click on "I understand my workflows, go ahead and enable them". You'll have to do this for every lab that has automated tests.
 
