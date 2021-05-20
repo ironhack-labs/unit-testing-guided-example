@@ -2,25 +2,7 @@
 
 # Unit Testing - Guided example
 
-## Introduction
-
-**Unit testing** is an automated testing methodology in which a test-runner executes small units of code and asserts wether the results match the developer's expectations.
-
-At Ironhack, we'll use these unit tests to give you instant feedback on your progress on most labs. They also enable us to assess your completion of labs. However, keep in mind that not every iteration and not every lab is testable.
-
-The Education team will rely on the results of these automated tests to access your progress and your work. We decided to take the same approach as it has been taken in the real-world development departments - the code needs to pass the tests in order to be accepted. This will train you to think in the direction of test-driven development and help you troubleshoot and solve problems.
-
-Read and follow these instructions carefully, there are a lot of new concepts in this Lab and missing one step might stop you from completing the steps that follow.
-
-## Technical Aspects
-
-As developers, we have at our disposal a large set of automated test-runners, frameworks and libraries. Our choice should always be informed by the automated testing type we're performing (those could be "unit", "integration" or "end-to-end" testing).
-
-The most widely-used JavaScript test-runners are `jest`, `mocha` and `jasmine`. The industry standard nowadays is **`jest`**. As `jest` can be used with plain JavaScript, as well as Node.js and React projects (which you will cover in later modules), a select number of labs from Module 1 through Module 3 will use it to perform unit tests.
-
-Jest is fairly simple to setup and to work with, but it will always be pre-configured for you in the labs in which it's used. As such, you won't have to tweak or dive deep into the topic as of yet.
-
-You'll be able to run these tests locally on your machine to ensure that your work matches the specification, but they'll also run once you push your solution to github.
+<br>
 
 ## Iteration 1 - Exploring the project
 
