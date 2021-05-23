@@ -2,46 +2,54 @@
 
 # Unit Testing - Guided example
 
-<br>
+## Iteration 1 - Initial Setup
 
-## Iteration 1 - Exploring the project
+Fork this repository. You should see an "**Actions**" tab at the top of the GitHub interface for your fork. Click it. You should see the following:
 
-At the root of this repository you'll find multiple files that are worthy of notice.
+![Actions Tab](https://user-images.githubusercontent.com/7128083/116699595-a9589500-a9bd-11eb-95be-fca6914504e0.png)
 
-First, `package.json`. This files contains the dependencies necessary to make the project work, as well as the configurations necessary to run our unit tests, format and lint our code. Plus, it holds a set of custom scripts that we can run using the `npm run` command. You won't have to change the contents of this file.
+Since our automated tests will be running not only locally but also on GitHub, we need to enable workflows for this repository. Click on "I understand my workflows, go ahead and enable them". You'll have to do this for every lab that has automated tests.
+
+Clone the fork to your machine.
+
+## Iteration 2 - Exploring the project
+
+At the root of this project you'll find multiple files that are worthy of notice.
+
+First, `package.json`. This files contains the external dependencies necessary to make the project work, as well as the configurations necessary to run our unit tests. Plus, it holds a set of custom scripts that we can run using the `npm run` command. You won't have to change the contents of this file.
 
 Second, you will find a tests directory. This directory contains multiple files with the `.spec.js` extensions. It is common to name unit test files ending with a `.spec.js` or `.tests.js` extension.
 
+Third, our main working file, `calculator.js`. It contains four distinct functions, one for each of the basic arithmetic operations. The functions `sum`, `subtract` and `divide` are incomplete. Later in the lab, you'll be asked to work on each to meet specific requirements. The fourth function, `multiply`, is implemented. You'll be asked to create unit tests to ensure that it runs as expected. At the bottom of this file you'll find an unfamiliar syntax (reading `module.exports = /* ... */`). It is required to make our unit tests work, and you'll be learning more about it later on.
+
 Files such as `package-lock.json`, and directories such as `.github` are not relevant right now. By the end of this bootcamp, you will know much more about all these terms that probably don't make too much sense now. Patience :pray:
 
-## Iteration 2 - Setting up the project
+## Iteration 3 - Setting up the project
 
 Open your terminal.
 
-To run unit test in your machine, you must have both `Node.js` and `npm` installed. To insure you have both, you can run the following commands:
+To run our unit tests on your machine, you must have both `Node.js` and `npm` installed. You can ensure you have both by running the following commands:
 
 ```shell
 $ node -v
-# or
-
+# and
 $ npm -v
 ```
 
 As a result, you should see the versions of either installed on your machine.
 
-As stated, our `package.json` file holds a list of the dependencies for this project. However, these dependencies are not automatically fetched when you clone the repository into your machine. To fetch the dependencies, run the command `npm install` (or the equivalent shorter command `npm i`) to install the project's dependencies. Follow the instructions below:
+As stated, our `package.json` file holds a list of the dependencies for this project. However, these dependencies are not automatically fetched when you clone the repository into your machine. To fetch and install the project's dependencies, follow the instructions below:
 
 ```shell
 # after you cloned this guided example, navigate inside the repo
 $ cd unit-testing-guided-example
-
 # and install project dependencies
 $ npm i
 ```
 
 After this point, you will see that a new file has been created (`package-lock.json`) but no changes will be made from your side inside there so no need to dig deeper into it for now.
 
-## Iteration 3 - Running unit tests, seeing failures
+## Iteration 4 - Running unit tests, seeing failures
 
 Before working on any of the functionalities that we intend to unit test, let's run the `npm run test` command on our terminal.
 
@@ -52,19 +60,17 @@ $ npm run test
 
 ![Image of terminal with failing test results](https://user-images.githubusercontent.com/7128083/114206907-ba306080-9953-11eb-8660-16161418590e.png)
 
-You should notice two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named **`test-report.html`** should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
+There should be two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named **`lab-solution.html`** should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
 
 :bangbang: If you get a message that reads "jest: command not found", you might have skipped the previous step where we installed dependencies using `npm install`.
 
-![Image of browser with failing test results][https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png]
+![Image of browser with failing test results](https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png)
 
-Since we don't want to have to run these tests every time we make an addition or change to our solution, we can start them in a "watch" mode. That means that `jest` will be looking for changes in our code, and will re-run our automated tests with every change.
+Since we don't want to have to run these tests every time we make changes to our solution, we can start the test-runner in _"watch mode"_. That means that `jest` will be looking for changes in our code, and will re-run the automated tests every time you save a file. To run the test-runner in "watch mode", run the `npm run test:watch` command in your terminal.
 
-To run the test-runner in "watch mode", run the `npm run test:watch` in your terminal. From now on, every time you save a file, your unit tests will be executed.
+To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `lab-solution.html` file.
 
-To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `test-report.html` file.
-
-## Iteration 4 - Passing our first tests
+## Iteration 5 - Passing our first tests
 
 To pass the first tests, open the `calculator.js` file and complete the `sum` function.
 
@@ -75,9 +81,11 @@ For this particular `sum` function, we don't expect it to simply sum any two val
 - If the function is called with a single number, and no second argument is passed, the function should act as if the second argument passed equals `0`.
 - If the function is called without any arguments, the function should act as if both arguments passed equal `0`.
 
-The `subtract` function follows the same logic. Complete it, and ensure you're checking the results of the unit tests to ensure that all of the requirements are met.
+## Iteration 6 - Subtracting
 
-## Iteration 5 - Dividing
+The `subtract` function follows the same logic. Complete it, and check the results of the unit tests to ensure that all of the requirements are met.
+
+## Iteration 7 - Dividing
 
 In maths, [we cannot divide a number by 0](https://en.wikipedia.org/wiki/Division_by_zero). However, if you perform a division operation in JavaScript, the value returned is `Infinity`.
 
@@ -91,9 +99,9 @@ throw new Error('An explanatory error message');
 
 Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by `0`. If this edge case is not considered, the last test of the test suite will fail.
 
-## Iteration 6 - Creating our own tests
+## Iteration 8 - Creating our own tests
 
-Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called "Test-Driven Development". This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
+Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called **"Test-Driven Development"**. This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
 
 Now, we'll work in reverse.
 
@@ -129,7 +137,7 @@ It's up to you to decide what values the `multiply` function should be called wi
 
 Follow the same naming pattern for tests that you find in the other test files. You can also consult [the `jest` documentation](https://jestjs.io/docs/expect), although you shouldn't need to.
 
-## Iteration 7 - Committing solution and checking results
+## Iteration 9 - Committing solution and checking results
 
 You have solved all of the prior iterations. All of the tests are passing locally.
 
@@ -155,7 +163,7 @@ If you want to dive in depth into your test results, or verify why your tests ar
 
 ![Image of actions tab](https://user-images.githubusercontent.com/7128083/114199203-ff509480-994b-11eb-9b40-1b65b0a2a45a.png)
 
-What we have implemented into this project is a so-called "Continuous Integration/Continuous Delivery" (CI/CD) system.
+What we have implemented into this project is a so-called "_Continuous Integration/Continuous Delivery_" (CI/CD) system.
 
 **Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.**
 
