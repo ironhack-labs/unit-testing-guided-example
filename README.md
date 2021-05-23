@@ -1,24 +1,6 @@
-# Lab - Unit Testing
-
 ![Ironhack Logo](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-## Introduction
-
-_Automated testing_ is one of the most powerful instruments in the tool belt of any software developer. By running automated tests on our code, we can ensure that it does what it's meant to do. These can be categorized into three broad groups: "unit", "integration" and "end-to-end" tests. Throughout the Web Development Bootcamp, we'll be working with **unit tests**.
-
-**Unit testing** is an automated testing methodology in which a test-runner executes small units of code and asserts wether the results match the developer's expectations.
-
-We'll use unit tests to give you instant feedback on your completion of some of the labs. The educational team will also rely on the results of these automated tests to access your progress and your work.
-
-Read and follow these instructions carefully, as there are a lot of new concepts in this Lab and missing one step might stop you from completing the steps that follow.
-
-## Technical Aspects
-
-We have at our disposal a large set of automated test-runners, frameworks and libraries. The most widely-used JavaScript test-runners are `jest`, `mocha` and `jasmine`. The industry standard is **`jest`**. As `jest` can be used with plain JavaScript, Node.js and React projects, a select number of labs from Module 1 through Module 3 will use it to perform unit tests.
-
-Jest is fairly simple to setup and to work with, but it will always be pre-configured for you in the labs in which it's used. As such, you won't have to tweak it or deep dive into the topic as of yet.
-
-You'll be able to run these tests locally on your machine to ensure that your work matches the specification, but they'll also run once you push your solution to GitHub.
+# Unit Testing - Guided example
 
 ## Iteration 1 - Initial Setup
 
@@ -40,25 +22,47 @@ Second, you will find a tests directory. This directory contains multiple files 
 
 Third, our main working file, `calculator.js`. It contains four distinct functions, one for each of the basic arithmetic operations. The functions `sum`, `subtract` and `divide` are incomplete. Later in the lab, you'll be asked to work on each to meet specific requirements. The fourth function, `multiply`, is implemented. You'll be asked to create unit tests to ensure that it runs as expected. At the bottom of this file you'll find an unfamiliar syntax (reading `module.exports = /* ... */`). It is required to make our unit tests work, and you'll be learning more about it later on.
 
-Files such as `package-lock.json`, and directories such as `.github` are not relevant right now.
+Files such as `package-lock.json`, and directories such as `.github` are not relevant right now. By the end of this bootcamp, you will know much more about all these terms that probably don't make too much sense now. Patience :pray:
 
 ## Iteration 3 - Setting up the project
 
 Open your terminal.
 
-To run our unit tests on your machine, you must have both `Node.js` and `npm` installed. You can ensure you have both by running the following commands: `node -v` and `npm -v`. As a result, you should see the installation version of each.
+To run our unit tests on your machine, you must have both `Node.js` and `npm` installed. You can ensure you have both by running the following commands:
 
-As stated, our project depends on external packages. In Module 2, you'll start working closely with these. For now, to fetch these dependencies, all you need to do is to run the command `npm install`. Doing so will add a `node_modules` directory to the root of the project.
+```shell
+$ node -v
+# and
+$ npm -v
+```
+
+As a result, you should see the versions of either installed on your machine.
+
+As stated, our `package.json` file holds a list of the dependencies for this project. However, these dependencies are not automatically fetched when you clone the repository into your machine. To fetch and install the project's dependencies, follow the instructions below:
+
+```shell
+# after you cloned this guided example, navigate inside the repo
+$ cd unit-testing-guided-example
+# and install project dependencies
+$ npm i
+```
+
+After this point, you will see that a new file has been created (`package-lock.json`) but no changes will be made from your side inside there so no need to dig deeper into it for now.
 
 ## Iteration 4 - Running unit tests, seeing failures
 
 Before working on any of the functionalities that we intend to unit test, let's run the `npm run test` command on our terminal.
 
+```shell
+# in the root of this project
+$ npm run test
+```
+
 ![Image of terminal with failing test results](https://user-images.githubusercontent.com/7128083/114206907-ba306080-9953-11eb-8660-16161418590e.png)
 
-There should be two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named `lab-solution.html` should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
+There should be two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named **`lab-solution.html`** should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
 
-(If you get a message that reads _"jest: command not found"_, you might have skipped the previous step where we installed dependencies using `npm install`.)
+:bangbang: If you get a message that reads "jest: command not found", you might have skipped the previous step where we installed dependencies using `npm install`.
 
 ![Image of browser with failing test results](https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png)
 
@@ -161,6 +165,6 @@ If you want to dive in depth into your test results, or verify why your tests ar
 
 What we have implemented into this project is a so-called "_Continuous Integration/Continuous Delivery_" (CI/CD) system.
 
-Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.
+**Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.**
 
 Best of luck 💙
