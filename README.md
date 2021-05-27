@@ -1,34 +1,58 @@
+
+
 ![Ironhack Logo](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
 # Unit Testing - Guided example
 
+
+
+## Introduction
+
+Test automation is a process of testing the code automatically by running the series of tests to verify that a program is functioning properly and meeting the requirements. 
+
+**Unit testing** is an automated testing methodology in which a test-runner executes small units of code and asserts wether the results match the developer’s expectations.
+
+The goal of this exercise is to get you familiarized with the process of forking and cloning your labs and running automated tests included in the labs.
+
+
+
+
+
 ## Iteration 1 - Initial Setup
 
-Fork this repository. You should see an "**Actions**" tab at the top of the GitHub interface for your fork. Click it. You should see the following:
+Fork this repository. You should see an "**Actions**" tab at the top of the GitHub interface of *your fork*. Click on it. You should see the following:
 
 ![Actions Tab](https://user-images.githubusercontent.com/7128083/116699595-a9589500-a9bd-11eb-95be-fca6914504e0.png)
 
 Since our automated tests will be running not only locally but also on GitHub, we need to enable workflows for this repository. Click on "I understand my workflows, go ahead and enable them". You'll have to do this for every lab that has automated tests.
 
-Clone the fork to your machine.
+*Clone* the fork to your machine.
+
+
 
 ## Iteration 2 - Exploring the project
 
 At the root of this project you'll find multiple files that are worthy of notice.
 
-First, `package.json`. This files contains the external dependencies necessary to make the project work, as well as the configurations necessary to run our unit tests. Plus, it holds a set of custom scripts that we can run using the `npm run` command. You won't have to change the contents of this file.
+First, `package.json`. This file contains the list of external dependencies necessary to make the project work, as well as the configurations necessary to run our unit tests. 
 
-Second, you will find a tests directory. This directory contains multiple files with the `.spec.js` extensions. It is common to name unit test files ending with a `.spec.js` or `.tests.js` extension.
+Second, you will find a `/tests` directory. This directory contains multiple files with the `.spec.js` extensions. When working with test runners, unit test files are commonly named ending with a `.spec.js` or `.tests.js` extension.
 
-Third, our main working file, `calculator.js`. It contains four distinct functions, one for each of the basic arithmetic operations. The functions `sum`, `subtract` and `divide` are incomplete. Later in the lab, you'll be asked to work on each to meet specific requirements. The fourth function, `multiply`, is implemented. You'll be asked to create unit tests to ensure that it runs as expected. At the bottom of this file you'll find an unfamiliar syntax (reading `module.exports = /* ... */`). It is required to make our unit tests work, and you'll be learning more about it later on.
+Third, our main working file, `calculator.js`. It contains four distinct functions, one for each of the basic arithmetic operations. The functions `sum`, `subtract` and `divide` are incomplete. In the next steps, you'll be asked to complete each of them to meet the test requirements. 
 
-Files such as `package-lock.json`, and directories such as `.github` are not relevant right now. By the end of this bootcamp, you will know much more about all these terms that probably don't make too much sense now. Patience :pray:
+
+
+Files such as `package-lock.json`, and directories such as `.github` and `node_modules` are part of the environment setup. You don't have to worry about them at the moment and you should leave them as they are. We will explain their purpose in the later point of the course while covering the *Node.js* environment.
+
+
+
+
 
 ## Iteration 3 - Setting up the project
 
 Open your terminal.
 
-To run our unit tests on your machine, you must have both `Node.js` and `npm` installed. You can ensure you have both by running the following commands:
+To run the unit tests on your machine, you must have both [*Node.js*](https://nodejs.org/en/download/) (`node`) and `npm` installed. To ensure that you have both, run the following commands:
 
 ```shell
 $ node -v
@@ -36,76 +60,80 @@ $ node -v
 $ npm -v
 ```
 
-As a result, you should see the versions of either installed on your machine.
+As a result, you should see the versions of both installed on your machine.
 
-As stated, our `package.json` file holds a list of the dependencies for this project. However, these dependencies are not automatically fetched when you clone the repository into your machine. To fetch and install the project's dependencies, follow the instructions below:
+As we mentioned earlier, our `package.json` file contains a list of the dependencies for this project. However, these dependencies are not automatically installed in the project folder when you clone the repository. To install the project's dependencies, follow the instructions below:
 
 ```shell
-# after you cloned this guided example, navigate inside the repo
+# After you cloned this guided example, navigate to the folder
 $ cd unit-testing-guided-example
+
 # and install project dependencies
 $ npm i
 ```
 
-After this point, you will see that a new file has been created (`package-lock.json`) but no changes will be made from your side inside there so no need to dig deeper into it for now.
 
-## Iteration 4 - Running unit tests, seeing failures
 
-Before working on any of the functionalities that we intend to unit test, let's run the `npm run test` command on our terminal.
+
+
+## Iteration 4 - Running unit tests
+
+Before we start coding, we first need to run the `npm run test:watch` command in the terminal.
 
 ```shell
-# in the root of this project
-$ npm run test
+# in the root directory of this project run
+$ npm run test:watch
 ```
+
+
 
 ![Image of terminal with failing test results](https://user-images.githubusercontent.com/7128083/114206907-ba306080-9953-11eb-8660-16161418590e.png)
 
-There should be two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named **`lab-solution.html`** should be automatically generated at the root of the project. Opening this file will display the results of the unit tests in the browser.
 
-:bangbang: If you get a message that reads "jest: command not found", you might have skipped the previous step where we installed dependencies using `npm install`.
+
+There should be two distinct forms of output. First, your terminal should display a list of the failed unit tests. Second, a file named **`lab-solution.html`** should be automatically generated at the root of the project. Opening this file in the browser will display the results of the unit tests.
+
+:bangbang: If you get a message that reads `jest: command not found`, you might have skipped the previous step where we installed dependencies by running the command `npm install`.
+
+
 
 ![Image of browser with failing test results](https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png)
 
-Since we don't want to have to run these tests every time we make changes to our solution, we can start the test-runner in _"watch mode"_. That means that `jest` will be looking for changes in our code, and will re-run the automated tests every time you save a file. To run the test-runner in "watch mode", run the `npm run test:watch` command in your terminal.
 
-To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `lab-solution.html` file.
+
+To see the results of the unit tests being updated automatically in the browser window, use the VSCode extension [*Live Server*](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `lab-solution.html` file.
+
+The tests are being run in the "watch mode". This means that each time you update and *save* your code `jest`  test runner will check for the changes in the code, and re-run the automated tests. Basically every time you save a file tests will run again and test results page will refresh. 
+
+
 
 ## Iteration 5 - Passing our first tests
 
 To pass the first tests, open the `calculator.js` file and complete the `sum` function.
 
-If you simply return a sum of both arguments from the `sum` function, you should see at least the first two tests of the "Sum" suite passing. However, a few other tests in the test suite are failing.
+If you simply return a sum of both arguments from the `sum` function, and save the file you should see the first two tests of the "Sum" suite passing.
 
-For this particular `sum` function, we don't expect it to simply sum any two values that it is passed. We want a few edge cases to be considered an properly handled.
 
-- If the function is called with a single number, and no second argument is passed, the function should act as if the second argument passed equals `0`.
-- If the function is called without any arguments, the function should act as if both arguments passed equal `0`.
 
 ## Iteration 6 - Subtracting
 
-The `subtract` function follows the same logic. Complete it, and check the results of the unit tests to ensure that all of the requirements are met.
+The `subtract` function follows the same logic. Complete it, save the file and check the results of the unit tests to ensure that all of the requirements are met.
+
+
 
 ## Iteration 7 - Dividing
 
-In maths, [we cannot divide a number by 0](https://en.wikipedia.org/wiki/Division_by_zero). However, if you perform a division operation in JavaScript, the value returned is `Infinity`.
+The `divide` function follows the same logic. Complete it, save the file and check the results of the unit tests to ensure that all of the requirements are met.
 
-JavaScript takes a relaxed approach on this topic, but we don't want to allow our `divide` function to make this mistake. As such, if the user calls the function `divide` and passes a `0` as the second argument, you should "throw" an error with the message "Cannot divide by 0".
 
-To throw an error in JavaScript, you should write:
 
-```js
-throw new Error('An explanatory error message');
-```
-
-Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by `0`. If this edge case is not considered, the last test of the test suite will fail.
-
-## Iteration 8 - Creating our own tests
+## Iteration 8 (Bonus) - Creating our own tests
 
 Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called **"Test-Driven Development"**. This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
 
 Now, we'll work in reverse.
 
-You can inspect and compare the other `*.spec.js` files to understand how _suites_, _tests_ and _assertions_ are made with Jest.
+You can inspect and compare the other `*.spec.js` files to understand how _suites_, _tests_ and _assertions_ are made with [Jest](https://jestjs.io/).
 
 You're given a `multiply` function inside of the `calculate.js` file. It is already complete, and requires no work from you side.
 
@@ -122,7 +150,7 @@ const { multiply } = require('./../calculator.js');
 Create a test suite for the "Multiply" functionality.
 
 ```js
-describe('Multiply', () => {
+describe("Multiply", () => {
   // Our tests will be added here.
 });
 ```
@@ -135,9 +163,13 @@ Then, inside of this test suite, we'll be writing each of the following tests th
 
 It's up to you to decide what values the `multiply` function should be called with, and what values are expected as a result.
 
-Follow the same naming pattern for tests that you find in the other test files. You can also consult [the `jest` documentation](https://jestjs.io/docs/expect), although you shouldn't need to.
+Follow the same naming pattern for tests that you find in the other test files. You can also consult the [Jest documentation](https://jestjs.io/docs/expect), although you shouldn't need to.
 
-## Iteration 9 - Committing solution and checking results
+
+
+
+
+## Iteration 8 - Committing solution and checking results
 
 You have solved all of the prior iterations. All of the tests are passing locally.
 
@@ -147,24 +179,37 @@ Immediately after doing so, you should see something like this on your fork of t
 
 ![Image of ongoing tests](https://user-images.githubusercontent.com/7128083/114205759-8f91d800-9952-11eb-86dc-36b64512d743.png)
 
-This means that GitHub is executing the unit tests for your project on their own machines.
+
+
+
+
+This means that GitHub will execute the unit tests for your repository and the code that you pushed.
 
 After a couple of minutes at most the tests results should be ready.
 
 If all of your tests are passing, you should see a green checkmark next to your commit message.
 
+
+
 ![Image of passing tests](https://user-images.githubusercontent.com/7128083/114199197-feb7fe00-994b-11eb-8b41-0dc5a916a3fb.png)
+
+
 
 If any of the tests are failing, you'll see a red cross instead.
 
 ![Image of failing tests](https://user-images.githubusercontent.com/7128083/114199210-0081c180-994c-11eb-93ff-b1833ad27121.png)
 
-If you want to dive in depth into your test results, or verify why your tests are failing on GitHub, you can press this status symbol or navigate to the "Actions" tab in your repository.
 
-![Image of actions tab](https://user-images.githubusercontent.com/7128083/114199203-ff509480-994b-11eb-9b40-1b65b0a2a45a.png)
 
-What we have implemented into this project is a so-called "_Continuous Integration/Continuous Delivery_" (CI/CD) system.
 
-**Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.**
+
+What we have enabled for this repository is a so-called "_Continuous Integration/Continuous Delivery_" (CI/CD) system, that runs all of our tests one more time.
+
+
+
+**Note that you might not always be able to complete every iteration in every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are not the one true measure of the quality of your work or your worth as a developer. Rather, tests are an important tool that you will use as a developer to automate your software development and to gather feedback.**
 
 Best of luck 💙
+
+
+
