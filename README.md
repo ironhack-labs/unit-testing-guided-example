@@ -8,9 +8,9 @@
 
 ## Introduction
 
-Test automation is a process of testing the code automatically by running the series of tests to verify that a program is functioning properly and meeting the requirements. 
+Test automation is a process of testing the code automatically by running a series of tests to verify that a program is functioning properly and meeting the requirements. 
 
-**Unit testing** is an automated testing methodology in which a test-runner executes small units of code and asserts wether the results match the developer’s expectations.
+**Unit testing** is an automated testing methodology in which a test-runner executes small units of code and asserts whether the results match the developer’s expectations.
 
 The goal of this exercise is to get you familiarized with the process of forking and cloning your labs and running automated tests included in the labs.
 
@@ -38,7 +38,7 @@ First, `package.json`. This file contains the list of external dependencies nece
 
 Second, you will find a `/tests` directory. This directory contains multiple files with the `.spec.js` extensions. When working with test runners, unit test files are commonly named ending with a `.spec.js` or `.tests.js` extension.
 
-Third, our main working file, `calculator.js`. It contains four distinct functions, one for each of the basic arithmetic operations. The functions `sum`, `subtract` and `divide` are incomplete. In the next steps, you'll be asked to complete each of them to meet the test requirements. 
+Third, our main working file, `calculator.js`. It contains four distinct functions, one for each of the basic arithmetic operations. The functions `sum`, `subtract`, and `divide` are incomplete. In the next steps, you'll be asked to complete each of them to meet the test requirements. 
 
 
 
@@ -103,7 +103,7 @@ There should be two distinct forms of output. First, your terminal should displa
 
 To see the results of the unit tests being updated automatically in the browser window, use the VSCode extension [*Live Server*](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `lab-solution.html` file.
 
-The tests are being run in the "watch mode". This means that each time you update and *save* your code `jest`  test runner will check for the changes in the code, and re-run the automated tests. Basically every time you save a file tests will run again and test results page will refresh. 
+The tests are being run in the "watch mode". This means that each time you update and *save* your code `jest`  test runner will check for the changes in the code, and re-run the automated tests. Basically, every time you save a file tests will run again and the test results page will refresh. 
 
 
 
@@ -111,7 +111,7 @@ The tests are being run in the "watch mode". This means that each time you updat
 
 To pass the first tests, open the `calculator.js` file and complete the `sum` function.
 
-If you simply return a sum of both arguments from the `sum` function, and save the file you should see the first two tests of the "Sum" suite passing.
+If you simply return a sum of both arguments from the `sum` function and save the file you should see the first two tests of the "Sum" suite passing.
 
 
 
@@ -135,11 +135,11 @@ Now, we'll work in reverse.
 
 You can inspect and compare the other `*.spec.js` files to understand how _suites_, _tests_ and _assertions_ are made with [Jest](https://jestjs.io/).
 
-You're given a `multiply` function inside of the `calculate.js` file. It is already complete, and requires no work from you side.
+You're given a `multiply` function inside of the `calculate.js` file. It is already complete and requires no work from your side.
 
 However, there are no unit tests for this function as of yet.
 
-Create a file named `multiply.spec.js`. In this file you'll create unit tests for the `multiply` function.
+Create a file named `multiply.spec.js`. In this file, you'll create unit tests for the `multiply` function.
 
 At the top of `multiply.spec.js`, you should import the `multiply` function that is exported by `calculator.js`. You can simply copy and paste the following line.
 
@@ -157,11 +157,11 @@ describe("Multiply", () => {
 
 Then, inside of this test suite, we'll be writing each of the following tests that consider the following scenarios.
 
-- Function is called with two positive integers. The value returned should be the result of the multiplication of both values.
-- Function is called with a negative and a positive integer. The value returned should be a negative number.
-- Function is called with any number and a number `0`. The value returned should be `0` (any number multiplied by `0` equals `0`).
+- When the function is called with two positive integers. The value returned should be the result of the multiplication of both values.
+- When the function is called with a negative and a positive integer. The value returned should be a negative number.
+- When the function is called with any number and a number `0`. The value returned should be `0` (any number multiplied by `0` equals `0`).
 
-It's up to you to decide what values the `multiply` function should be called with, and what values are expected as a result.
+It's up to you to decide what values the `multiply` function should be called with, in the tests, and what values are expected as a result.
 
 Follow the same naming pattern for tests that you find in the other test files. You can also consult the [Jest documentation](https://jestjs.io/docs/expect), although you shouldn't need to.
 
@@ -185,7 +185,7 @@ Immediately after doing so, you should see something like this on your fork of t
 
 This means that GitHub will execute the unit tests for your repository and the code that you pushed.
 
-After a couple of minutes at most the tests results should be ready.
+After a couple of minutes at most, the test results should be ready.
 
 If all of your tests are passing, you should see a green checkmark next to your commit message.
 
