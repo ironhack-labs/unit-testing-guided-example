@@ -4,6 +4,7 @@ describe("Sum", () => {
   test("should add up two positive integers correctly", () => {
     const result = sum(1, 2);
     expect(result).toBe(3);
+    
   });
 
   test("should add up two floating point numbers correctly", () => {
