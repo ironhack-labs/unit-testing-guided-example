@@ -1,13 +1,25 @@
 function sum(a, b) {
-  return;
+  let sum = 0;
+  if (a) sum += a;
+  if (b) sum += b;
+  if (!a && !b) return 0;
+  return sum;
 }
 
 function subtract(a, b) {
-  return;
+  let sum = 0;
+  if (a && b) {
+    return a - b;
+  } else {
+    if (a) sum += a;
+    if (b) sum += b;
+    return sum;
+  }
 }
 
 function divide(a, b) {
-  return;
+  if (a === 0 || b === 0) throw 'error';
+  return a / b;
 }
 
 function multiply(a, b) {
