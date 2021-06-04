@@ -1,17 +1,21 @@
 function sum(a, b) {
-  return;
+  let result = a + b
+  return result;
 }
 
 function subtract(a, b) {
-  return;
+  let result = a - b
+  return result;
 }
 
 function divide(a, b) {
-  return;
+  let result = a / b
+  return result;
 }
 
 function multiply(a, b) {
-  return a * b;
+  let result = a * b
+  return result;
 }
 
 // The following is required to make unit tests work. Please ignore it.
