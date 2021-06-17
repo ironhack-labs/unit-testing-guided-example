@@ -22,7 +22,7 @@ Second, you will find a tests directory. This directory contains multiple files 
 
 Third, our main working file, `calculator.js`. It contains four distinct functions, one for each of the basic arithmetic operations. The functions `sum`, `subtract` and `divide` are incomplete. Later in the lab, you'll be asked to work on each to meet specific requirements. The fourth function, `multiply`, is implemented. You'll be asked to create unit tests to ensure that it runs as expected. At the bottom of this file you'll find an unfamiliar syntax (reading `module.exports = /* ... */`). It is required to make our unit tests work, and you'll be learning more about it later on.
 
-Files such as `package-lock.json`, and directories such as `.github` are not relevant right now. By the end of this bootcamp, you will know much more about all these terms that probably don't make too much sense now. Patience :pray:
+Files such as `package-lock.json` (you don't see it just yet, but soon you will), and directories such as `.github` and `node_modules` (also, you don't see it just yet, but soon you will) are not relevant right now. By the end of this bootcamp, you will know much more about all these terms that probably don't make too much sense now. Patience :pray:
 
 ## Iteration 3 - Setting up the project
 
@@ -47,7 +47,7 @@ $ cd unit-testing-guided-example
 $ npm i
 ```
 
-After this point, you will see that a new file has been created (`package-lock.json`) but no changes will be made from your side inside there so no need to dig deeper into it for now.
+After this point, you will see that a new file has been created (`package-lock.json`) as well as new folder (`node_modules`) but no changes will be made from your side inside there so no need to dig deeper into it for now.
 
 ## Iteration 4 - Running unit tests, seeing failures
 
@@ -67,6 +67,10 @@ There should be two distinct forms of output. First, your terminal should displa
 ![Image of browser with failing test results](https://user-images.githubusercontent.com/7128083/114205765-90c30500-9952-11eb-85e5-dbb5bfd36028.png)
 
 Since we don't want to have to run these tests every time we make changes to our solution, we can start the test-runner in _"watch mode"_. That means that `jest` will be looking for changes in our code, and will re-run the automated tests every time you save a file. To run the test-runner in "watch mode", run the `npm run test:watch` command in your terminal.
+
+```shell
+$ npm run test:watch
+```
 
 To see the results of the unit tests being updated automatically in the browser window, you can use the VSCode extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open the `lab-solution.html` file.
 
@@ -99,7 +103,7 @@ throw new Error('An explanatory error message');
 
 Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by `0`. If this edge case is not considered, the last test of the test suite will fail.
 
-## BONUS: Iteration 8 - Creating our own tests
+## Iteration 8 - Creating our own tests
 
 Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called **"Test-Driven Development"**. This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
 
