@@ -99,7 +99,7 @@ throw new Error('An explanatory error message');
 
 Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by `0`. If this edge case is not considered, the last test of the test suite will fail.
 
-## Iteration 8 - Creating our own tests
+## BONUS: Iteration 8 - Creating our own tests
 
 Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called **"Test-Driven Development"**. This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
 
