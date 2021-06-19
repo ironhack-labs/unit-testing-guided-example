@@ -2,9 +2,11 @@
 
 # Unit Testing - Guided example
 
+<br>
+
 ## Iteration 1 - Initial Setup
 
-Fork this repository. You should see an "**Actions**" tab at the top of the GitHub interface for your fork. Click it. You should see the following:
+**Fork** this repository. You should see an "**Actions**" tab at the top of the GitHub interface for your fork. Click it. You should see the following:
 
 ![Actions Tab](https://user-images.githubusercontent.com/7128083/116699595-a9589500-a9bd-11eb-95be-fca6914504e0.png)
 
@@ -103,7 +105,7 @@ throw new Error('An explanatory error message');
 
 Our `divide` unit tests will experiment with dividing plain integers, floating point numbers, but also dividing by `0`. If this edge case is not considered, the last test of the test suite will fail.
 
-## Iteration 8 - Creating our own tests
+## Bonus: Iteration 8 - Creating our own tests
 
 Up until now, we've been coding our functions to pass our tests. What we've been unknowingly doing is following a testing methodology called **"Test-Driven Development"**. This happens when the tests have been written in advance, and we're simply completing our functions to match the specifications that had been originally defined.
 
@@ -170,5 +172,7 @@ If you want to dive in depth into your test results, or verify why your tests ar
 What we have implemented into this project is a so-called "_Continuous Integration/Continuous Delivery_" (CI/CD) system.
 
 **Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.**
+
+<br>
 
 Best of luck 💙
