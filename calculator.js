@@ -10,7 +10,8 @@ function divide(a, b) {
   return a / b;
 }
 
-// test
+// test 2
+// test 2
 
 function multiply(a, b) {
   return a * b;
