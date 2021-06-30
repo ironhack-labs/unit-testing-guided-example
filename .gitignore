@@ -1,6 +1,8 @@
 node_modules
 .DS_Store
 .vscode
+# having package-lock.json in gitignore is not best practice
+# we are adding it here for the maintainance purposes
 package-lock.json
 yarn.lock
 *.log
