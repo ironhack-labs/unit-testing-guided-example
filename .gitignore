@@ -1,4 +1,4 @@
-node_modules
+node_modules/
 .DS_Store
 .vscode
 # having package-lock.json in gitignore is not best practice
