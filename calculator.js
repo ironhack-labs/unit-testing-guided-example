@@ -1,13 +1,53 @@
 function sum(a, b) {
-  return;
+
+  if (a == undefined && b == undefined) {
+    return (0);
+  }
+  if (a == undefined) {
+    return (b);
+  }
+  if (b == undefined) {
+    return (a);
+  }
+  if (a + b) {
+    return (a + b);
+  }
+
 }
 
+
+
 function subtract(a, b) {
-  return;
+
+  if (a - b) {
+    return (a - b);
+  }
+
+  if (a == undefined && b == undefined) {
+    return (0);
+  }
+
+  if (a == undefined) {
+    return (b);
+  }
+
+  if (b == undefined) {
+    return (a);
+  }
+
 }
 
 function divide(a, b) {
-  return;
+
+  if (b == 0) {
+    throw new Error("error");
+    return (a / b);
+  }
+
+  if (a / b) {
+    return (a / b);
+  }
+
 }
 
 function multiply(a, b) {
