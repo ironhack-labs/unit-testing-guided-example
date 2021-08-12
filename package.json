@@ -21,7 +21,9 @@
         "./node_modules/jest-html-reporter",
         {
           "pageTitle": "Lab Solution",
-          "outputPath": "lab-solution.html"
+          "outputPath": "lab-solution.html",
+          "includeConsoleLog": true,
+          "includeFailuresMsg": true
         }
       ]
     ]
