@@ -1,13 +1,30 @@
 function sum(a, b) {
-  return;
+  if((a === undefined) && (b === undefined)){
+    return 0;
+  } else if ((a === undefined) || (b === undefined)){
+    return a || b + 0;
+  }else{
+    return a + b;
+  }
 }
 
 function subtract(a, b) {
-  return;
+  if((a === undefined) && (b === undefined)){
+    return 0;
+  } else if ((a === undefined) || (b === undefined)){
+    return a || b - 0;
+  } else {
+    return a - b;
+  }
 }
 
 function divide(a, b) {
-  return;
+  if (b == 0){
+    return console.error(error);;
+  } else{
+    return a / b;
+  }
+
 }
 
 function multiply(a, b) {
