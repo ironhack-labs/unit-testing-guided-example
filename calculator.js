@@ -1,14 +1,17 @@
 function sum(a, b) {
-  return;
-}
+  return a+b;
+} if(a=undefined && b=undefined)
+ else if (a=undefined || b=undefined)
+{return 0;}
 
 function subtract(a, b) {
-  return;
+  return a-b;
 }
 
 function divide(a, b) {
-  return;
-}
+  return a/b;
+} 
+if (b==0) {throw Error('impossible to divide by 0');}
 
 function multiply(a, b) {
   return a * b;
