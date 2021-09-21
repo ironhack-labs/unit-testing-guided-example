@@ -1,13 +1,21 @@
 function sum(a, b) {
-  return;
+  if (a === undefined || b === undefined){
+    return 0;
+  }else {
+    return a+b;
+
+  }
 }
 
 function subtract(a, b) {
-  return;
+  if (a === undefined || b === undefined){
+    return 0;
+  }
+  return a-b;
 }
 
 function divide(a, b) {
-  return;
+  return a/b;
 }
 
 function multiply(a, b) {
