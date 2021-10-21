@@ -1,13 +1,39 @@
 function sum(a, b) {
-  return;
+
+  if ( !a && !b ) {
+    return 0;
+  } else if ( !a ) {
+    return b + 0;
+  } else if ( !b ) {
+    return a + 0
+  }
+
+
+
+  return a + b
+
 }
 
 function subtract(a, b) {
-  return;
+  
+  if ( !a && !b ) {
+    return 0;
+  } else if ( !a ) {
+    return b - 0;
+  } else if ( !b ) {
+    return a - 0;
+  }
+  return a - b;
 }
 
+
 function divide(a, b) {
-  return;
+
+  if( b === 0 ) {
+    throw 'No se puede dividir entre 0';
+  }
+
+  return a / b;
 }
 
 function multiply(a, b) {
