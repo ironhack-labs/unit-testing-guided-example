@@ -1,16 +1,36 @@
 function sum(a, b) {
-  return;
+  if (!a && !b) {
+    return 0
+  }if(a === undefined){
+    return b
+
+  }if(b === undefined){
+    return a
+  }
+return a + b;
 }
 
 function subtract(a, b) {
-  return;
+  if (!a && !b) {
+    return 0
+  } if(a === undefined){
+    return b
+  }if(b === undefined){
+    return a
+  }
+ return a - b;
+ 
 }
 
 function divide(a, b) {
-  return;
+  if(b === 0){
+    throw "error"
+  }
+  return a / b;
+  
 }
 
-function multiply(a, b) {
+function multiply(a, b){
   return a * b;
 }
 
