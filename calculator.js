@@ -1,5 +1,5 @@
-let validateInput = (a) => a && typeof a === 'number';
-let reasignInput = (a) => (validateInput(a) ? a : 0);
+const validateInput = (a) => a && typeof a === 'number';
+const reasignInput = (a) => (validateInput(a) ? a : 0);
 
 function sum(a, b) {
   a = reasignInput(a);
