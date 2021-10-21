@@ -10,7 +10,7 @@ function sum(a, b) {
     return a
   }
   else{
-    let result = a + b;
+    const result = a + b;
     return result
   }
 }
@@ -28,7 +28,7 @@ function subtract(a, b) {
     return a
   }
   else{
-    let result = a - b;
+    const result = a - b;
     return result
   }
 }
@@ -37,21 +37,24 @@ function divide(a, b) {
 
   if (a===0 || b===0)
   {
-    throw "Error";
+    throw new Error('An explanatory error message');
   }
 
   else{
-    let result = a / b;
+    const result = a / b;
     return result
   }
-
-  const result = a-b
-  return result;
 }
 
 function multiply(a, b) {
-  const result = a*b
+  if ( a===0 || b===0 ) {
+    const result = 0;
+    return result;
+  } else {
+    const result = a*b
   return result;
+  }
+
 }
 
 

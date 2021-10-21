@@ -15,3 +15,5 @@ describe("Divide", () => {
     expect(() => divide(1.35, 0)).toThrow();
   });
 });
+
+
