@@ -1,9 +1,5 @@
-function sum(a, b) {
-  return;
-}
-
 function subtract(a, b) {
-  return;
+  return a * b;;
 }
 
 function divide(a, b) {
@@ -16,3 +12,4 @@ function multiply(a, b) {
 
 // The following is required to make unit tests work. Please ignore it.
 module.exports = { sum, subtract, divide, multiply };
+//prueba
