@@ -1,5 +1,9 @@
+let validateInput = (a) => (a && typeof a === 'number');
+
 function sum(a, b) {
-  return;
+  b = validateInput(b) ? b : 0;
+  a = validateInput(a) ? a : 0;
+  return a + b;
 }
 
 function subtract(a, b) {
