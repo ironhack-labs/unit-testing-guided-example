@@ -1,14 +1,32 @@
 function sum(a, b) {
-  return;
+  if (!a && !b) {
+    return 0;
+  }
+a = a || 0
+b = b || 0
+  return a+b;
 }
 
 function subtract(a, b) {
-  return;
+  if (!a && !b) {
+    return 0
+  }
+
+  a = a || 0
+  b = b || 0
+  return a-b;
 }
 
 function divide(a, b) {
-  return;
-}
+
+  
+if (b === 0){
+throw "Error2"
+}  
+
+
+return a/b;
+  }
 
 function multiply(a, b) {
   return a * b;
