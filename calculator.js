@@ -1,13 +1,39 @@
 function sum(a, b) {
-  return;
+  
+  if(!a && !b){
+    return 0
+  }
+
+  if(!a){
+    return b+0
+  }
+
+  if(!b){
+    return a+0
+  }
+  return a+b;
+
 }
 
+
 function subtract(a, b) {
-  return;
+
+  if(!a && !b){
+    return 0
+  }
+
+  if(!b){
+    return a-0
+  }
+  return a-b;
 }
 
 function divide(a, b) {
-  return;
+
+  if(b===0){
+    throw new Error('infinity');
+  }
+  return a/b; 
 }
 
 function multiply(a, b) {
