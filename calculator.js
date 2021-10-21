@@ -1,15 +1,40 @@
 function sum(a, b) {
-  return;
+  if (!a && !b) {
+    return 0
+  }
+
+  if (!a || !b) {
+    return a
+  }
+
+  else {
+  return a+b; 
 }
 
+}
+
+
 function subtract(a, b) {
-  return;
+  if (!a && !b) {
+    return 0
+  }
+  if (!a || !b) {
+    return a
+  }
+  else {
+  return a-b;
+  }
 }
 
 function divide(a, b) {
-  return;
+  if (a === 0 || b === 0){
+  return error; 
 }
 
+ else {
+  return a/b;
+}
+}
 function multiply(a, b) {
   return a * b;
 }
