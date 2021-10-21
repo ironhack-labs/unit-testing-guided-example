@@ -1,23 +1,8 @@
 function sum(a, b) {
 
-  if (a===undefined || b===undefined) {
-    return (0); 
-
-  } else if (!a || !b) {
-    return (0);
-
-  } else if (!a && !b) {
-    return (0);
-
-  } else if (a===undefined) {
-    a = 0+a;
-    return (a + b);
-
-  } else if (b===undefined) {
-    b = 0+b;
-    return (a + b);
-
-  }
+  if (a === undefined) {a = 0}
+  
+  if (b === undefined) {b = 0}
 
   return (a + b);
 
@@ -25,43 +10,28 @@ function sum(a, b) {
 
 function subtract(a, b) {
 
-  if (a===undefined || b===undefined) {
-    return (0); 
-
-  } else if (!a || !b) {
-    return (0);
-
-  } else if (!a && !b) {
-    return (0);
-
-  } else if (null) {
-    return (0);
-
-  }
+  if (a === undefined) {a = 0}
   
+  if (b === undefined) {b = 0}
+
+  if (!a && !b) {
+    return (0);}
+
   return (a - b);
 
 }
 
-function divide(a, b) {
-  if (a===undefined || b===undefined) {
-    return (0); 
+function divide(a, b) { 
 
-  } else if (!a || !b) {
-    return (0);
-
-  } else if (!a && !b) {
-    return (0);
-
-  } else if (null) {
-    return (0);
-
+  if (b === 0) {
+    throw new Error('oh noooo');
   }
   
   return (a / b);
 }
 
 function multiply(a, b) {
+  
   if (a===undefined || b===undefined) {
     return (0); 
 
@@ -69,9 +39,6 @@ function multiply(a, b) {
     return (0);
 
   } else if (!a && !b) {
-    return (0);
-
-  } else if (null) {
     return (0);
 
   }
