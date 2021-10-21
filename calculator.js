@@ -1,17 +1,45 @@
 function sum(a, b) {
-  return;
+  if (!a && !b) {
+    return 0;
+  }
+  if (!a) {
+    return b;
+  }
+  if (!b) {
+    return a;
+  }
+  return a + b;
 }
 
 function subtract(a, b) {
-  return;
+  if (!a && !b) {
+    return 0;
+  }
+  if (!a) {
+    return b;
+  }
+  if (!b) {
+    return a;
+  }
+  return a - b;
 }
 
 function divide(a, b) {
-  return;
+  if (b === 0) {
+    throw new Error("Can't divide by 0");
+  }
+  if (!a && !b) {
+    return 0;
+  }
+  return a / b;
 }
 
 function multiply(a, b) {
-  return a * b;
+  if ((!a && !b) || !a || !b) {
+    return 0;
+  }
+  const result = a * b;
+  return result;
 }
 
 // The following is required to make unit tests work. Please ignore it.
