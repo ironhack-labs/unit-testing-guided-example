@@ -1,17 +1,25 @@
-let validateInput = (a) => (a && typeof a === 'number');
+let validateInput = (a) => a && typeof a === 'number';
+let reasignInput = (a) => (validateInput(a) ? a : 0);
 
 function sum(a, b) {
-  b = validateInput(b) ? b : 0;
-  a = validateInput(a) ? a : 0;
+  a = reasignInput(a);
+  b = reasignInput(b);
   return a + b;
 }
 
 function subtract(a, b) {
-  return;
+  a = reasignInput(a);
+  b = reasignInput(b);
+  return a - b;
 }
 
 function divide(a, b) {
-  return;
+  a = reasignInput(a);
+  b = reasignInput(b);
+  if(b===0) throw new Error(
+    `you provided /n a : ${a}/n b: ${b} /nDivision by Zero is not possible`
+  );
+  return a / b;
 }
 
 function multiply(a, b) {
