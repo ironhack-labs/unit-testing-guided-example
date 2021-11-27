@@ -1,4 +1,5 @@
 function testParameters(a,b,operation){
+  //A function that checks all the problems that are coming for the parameters
   switch(operation){
     case "sum":
     case "substract":
