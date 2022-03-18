@@ -6,13 +6,17 @@
 
 ## Iteration 1 - Initial Setup
 
-**Fork** this repository. You should see an "**Actions**" tab at the top of the GitHub interface for your fork. Click it. You should see the following:
+**Fork** this repository first. After you have successfully forked the repository to your account **clone** it to your machine.
+
+
+
+<!-- **Fork** this repository. You should see an "**Actions**" tab at the top of the GitHub interface for your fork. Click it. You should see the following:
 
 ![Actions Tab](https://user-images.githubusercontent.com/7128083/116699595-a9589500-a9bd-11eb-95be-fca6914504e0.png)
 
 Since our automated tests will be running not only locally but also on GitHub, we need to enable workflows for this repository. Click on "I understand my workflows, go ahead and enable them". You'll have to do this for every lab that has automated tests.
 
-Clone the fork to your machine.
+Clone the fork to your machine. -->
 
 ## Iteration 2 - Exploring the project
 
@@ -143,11 +147,13 @@ It's up to you to decide what values the `multiply` function should be called wi
 
 Follow the same naming pattern for tests that you find in the other test files. You can also consult [the `jest` documentation](https://jestjs.io/docs/expect), although you shouldn't need to.
 
-## Iteration 9 - Committing solution and checking results
+## Iteration 9 - Committing the solution
 
 You have solved all of the prior iterations. All of the tests are passing locally.
 
-Let's commit our work, and push it to GitHub.
+Let's **commit** our work, and **push** it to GitHub.
+
+<!--
 
 Immediately after doing so, you should see something like this on your fork of the repository on GitHub:
 
@@ -170,6 +176,8 @@ If you want to dive in depth into your test results, or verify why your tests ar
 ![Image of actions tab](https://user-images.githubusercontent.com/7128083/114199203-ff509480-994b-11eb-9b40-1b65b0a2a45a.png)
 
 What we have implemented into this project is a so-called "_Continuous Integration/Continuous Delivery_" (CI/CD) system.
+
+
 
 **Note that you might not always be able to complete every iteration on every lab, or to pass every single test. This shouldn't demotivate you. Automated tests are an important tool to gather feedback but are not the one true measure of the quality of your work or your worth as a developer.**
 
