@@ -1,13 +1,28 @@
 function sum(a, b) {
-  return;
+  if(arguments.length == 0) {
+    return 0;
+}
+  if(arguments.length == 1) {
+    return arguments[0];
+  }
+return a + b;
 }
 
 function subtract(a, b) {
-  return;
+  if(arguments.length == 0) {
+    return 0;
+  }
+  if(arguments.length == 1) {
+    return arguments[0];
+  }
+  return a - b;
 }
 
 function divide(a, b) {
-  return;
+  if(b == 0) {
+    throw new Error('Cannot divide by 0')
+  }
+  return a / b;
 }
 
 function multiply(a, b) {
