@@ -1,17 +1,24 @@
-function sum(a, b) {
-  return;
+function sum(a=0, b=0) {
+return a+b;
 }
 
-function subtract(a, b) {
-  return;
+function subtract(a=0, b=0) {
+  return a-b;
 }
 
 function divide(a, b) {
-  return;
+  while (b!== 0) {
+    return a/b;
+  }
+  throw true;
 }
 
-function multiply(a, b) {
-  return a * b;
+function multiply(a=0, b=0) {
+  if(b===0){
+    throw true;
+  } else {
+    return a*b;
+  }
 }
 
 // The following is required to make unit tests work. Please ignore it.
