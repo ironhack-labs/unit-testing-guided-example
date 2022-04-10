@@ -1,16 +1,25 @@
-function sum(a, b) {
-  return;
+function sum(a, b = 0) 
+{
+  if(!a && !b)return 0;
+  return a + b;
 }
 
-function subtract(a, b) {
-  return;
+function subtract(a, b = 0) 
+{
+  if(!a && !b)return 0;
+  return a - b;
 }
 
-function divide(a, b) {
-  return;
+function divide(a, b) 
+{
+  if(!a && !b)return 0;
+  if(b == 0)Throw();
+  return a / b;
 }
 
-function multiply(a, b) {
+function multiply(a, b) 
+{
+  if(!a && !b)return 0;
   return a * b;
 }
 
