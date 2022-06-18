@@ -1,13 +1,21 @@
 function sum(a, b) {
-  return;
+  if (!a && !b) return 0;
+  if (!a) return b
+  if (!b) return a
+  return a + b;
 }
 
 function subtract(a, b) {
+  if (!a && !b) return 0;
+  if (!a) return b
+  if (!b) return a
+  return a - b;
   return;
 }
 
 function divide(a, b) {
-  return;
+  if (!a || !b) throw new Error("Cannot divide by 0")
+  return a/b;
 }
 
 function multiply(a, b) {
