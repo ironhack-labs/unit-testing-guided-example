@@ -1,17 +1,20 @@
-const { multiply } = require("../calculator");
+const { multiply } = require('./../calculator.js');
 
-describe("Sum", () => {
-  test("should add up two positive integers correctly", () => {
+
+
+
+describe("Multiply", () => {
+  test("The value returned should be the result of the multiplication of both values.", () => {
     const result = multiply(1, 2);
     expect(result).toBe(3);
   });
 
-  test("should add up two floating point numbers correctly", () => {
+  test("The value returned should be a negative number.", () => {
     const result = multiply(1.35, 2.29);
     expect(result).toBe(3.64);
   });
 
-  test("should add up a negative and a positive number correctly", () => {
+  test("The value returned should be 0 (any number multiplied by 0 equals 0).", () => {
     const result = multiply(-1.35, 2.29);
     expect(result).toBe(0.94);
   });
