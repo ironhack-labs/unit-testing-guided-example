@@ -3,7 +3,6 @@ function sum(a = 0, b = 0) {
 }
 
 function subtract(a = 0, b = 0) {
-
   let result = a - b;
   return result;
 }
